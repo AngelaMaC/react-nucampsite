@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle, CardText } from 'reactstrap';
 
 
 function RenderCampsite({campsite}) {
@@ -7,9 +7,10 @@ function RenderCampsite({campsite}) {
         <div className="col-md-5 m-1">
                 <Card onClick={() => this.onCampsiteSelect(campsite)}>
                     <CardImg width="100%" src={campsite.image} alt={campsite.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{campsite.name}</CardTitle>
-                    </CardImgOverlay>
+                    {/* <CardImgOverlay>
+                    </CardImgOverlay> */}
+                    <CardTitle>{campsite.name}</CardTitle>
+                    <CardText>{campsite.description}</CardText>
                 </Card>
     </div>
     );
@@ -41,7 +42,7 @@ function CampsiteInfo(props) {
             <div className="container">
                 <div className="row">
                     <RenderCampsite campsite={props.campsite} />
-                    <RenderComments comments={props.campsite.comments} />             
+                    <RenderComments comments={props.comments} />             
                 </div>
             </div>
         );
