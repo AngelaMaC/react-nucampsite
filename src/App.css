@@ -41,6 +41,21 @@ h2 {
   background-color: #901CAD;
 }
 
+.brandName-appear {
+  color: #901CAD;
+  transition: color 2000ms linear;
+}
+
+.brandName-appear-active {
+  color: #CEC8FF;
+  transition: color 2000ms linear;
+}
+
+.brandName-enter-done {
+  color: white;
+  transition: color 2000ms linear;
+}
+
 .page-enter {
   opacity: 0;
   transform: translateX(-100%);

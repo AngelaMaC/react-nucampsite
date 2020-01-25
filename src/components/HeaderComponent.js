@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 class Header extends Component {
 
@@ -38,16 +39,19 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <Jumbotron fluid>
+                <Jumbotron fluid>                            
                     <div className="container">
                         <div className="row">
                             <div className="col">
+                            <CSSTransition in={true} appear={true} timeout={2000} classNames="brandName">  
                                 <h1>NuCamp</h1>
+                            </CSSTransition>
                                 <h2>a better way to camp</h2>
                             </div>
                         </div>
-                    </div>
+                    </div>                
                 </Jumbotron>
+                
                 <Navbar dark sticky="top" expand="md">
                     <div className="container">
                         <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/logo.png" height="30" width="30" alt="NuCamp Logo" /></NavbarBrand>
